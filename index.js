@@ -6,7 +6,10 @@ module.exports = postcss.plugin('postcss-tailwind-rtl', () => {
     'margin-left',
     'margin-right',
     'padding-left',
-    'padding-right'
+    'padding-right',
+    'right',
+    'left',
+    'transform'
   ]
 
   // Work with options here
@@ -51,6 +54,15 @@ module.exports = postcss.plugin('postcss-tailwind-rtl', () => {
         declaration.value = 'right'
       } else if (declaration.prop === 'margin-left') {
         declaration.prop = 'margin-right'
+      } else if (declaration.prop === 'left') {
+        declaration.prop = 'right'
+      } else if (declaration.prop === 'right') {
+        declaration.prop = 'left'
+      } else if (declaration.prop === 'transform') {
+        let result = declaration.value.match(/translateX\((\-?\d+\.?\d+)(.*)\)/);
+        if(result) {
+          declaration.value = declaration.value.replace(result[0], `translateX(${(result[1] - (result[1] * 2))}${result[2]})`);
+        }
       } else if (declaration.prop === 'margin-right') {
         declaration.prop = 'margin-left'
       } else if (declaration.prop === 'padding-left') {
