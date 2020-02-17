@@ -1,11 +1,14 @@
 {
   "name": "@onexer/postcss-tailwind-rtl",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "PostCSS plugin to add RTL support to tailwind",
   "keywords": [
     "postcss",
     "css",
-    "postcss-plugin"
+    "postcss-plugin",
+    "tailwind",
+    "tailwind rtl",
+    "rtl"
   ],
   "scripts": {
     "test": "jest && eslint ."

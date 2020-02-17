@@ -28,7 +28,7 @@ and set this plugin in settings.
 [official docs]: https://github.com/postcss/postcss#usage
 
 ## HTML Page
-You will must add dir property in both html and body in your page for both ltr ot trl
+You will must add dir property in both html and body in your page for both ltr ot rtl
 ```html
 <html dir="rtl">
 <head>...</head>
